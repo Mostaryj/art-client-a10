@@ -11,8 +11,8 @@ const Nav = () => {
   // console.log(user);
 
   const tooltipContent = <>
+
   {user?.displayName || "User name not found"}
- 
   
   </>;
   const tooltipString = renderToString(tooltipContent);
@@ -31,14 +31,14 @@ const Nav = () => {
       <li className="font-semibold">
         <NavLink to="/myArt">My Art&Craft List</NavLink>
       </li>
-      <li className="font-semibold">
+      {/* <li className="font-semibold">
         <NavLink to="/register">Register</NavLink>
-      </li>
+      </li> */}
      
     </>
   );
   return (
-    <div className="max-w-6xl mx-auto p-2">
+    <div className=" ">
       <div className="navbar bg-base-200 border-b-2 ">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -105,15 +105,16 @@ const Nav = () => {
                     
                   />
                       <button
-                    className="btn absolute mt-8 right-0 bg-white p-2 rounded-md shadow-md opacity-0 hover:opacity-100 transition-opacity duration-300"
+                    className="btn text-white absolute mt-8 right-0  p-2 rounded-md shadow-md opacity-0 hover:opacity-100 transition-opacity hover:bg-blue-800 duration-300"
                     onClick={logOut}
                   >
                     LogOut
                   </button>
-                  {/* <div className="tooltip-content absolute bg-white p-2 rounded-md shadow-md hidden opacity-0 hover:opacity-100 transition-opacity duration-300">
-                    {user?.displayName || "User name not found"}
-                    {user && <button onClick={logOut}>Logout</button>}
+
+{/* <div className="tooltip-content absolute bg-white p-2 rounded-md shadow-md hidden opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    {tooltipContent}
                   </div> */}
+                
                 </div>
                
               </label>
@@ -122,7 +123,7 @@ const Nav = () => {
           </div>
         )}
 
-        <div className=" gap-4">
+        <div className=" ">
           <Link to="/login">
             {/* {user ? ( */}
               
@@ -136,10 +137,12 @@ const Nav = () => {
             
              {/* ) 
              : ( */}
+
+            
             
                 <button
                 //  onClick={logOut}
-                 className="btn bg-cyan-500 text-white"
+                 className="btn bg-blue-800 text-white"
                >
                  Login
                </button>
@@ -147,6 +150,17 @@ const Nav = () => {
 
              {/* )} */}
           </Link>
+            <Link to="/register">
+            <button
+                //  onClick={logOut}
+                 className="btn bg-blue-800 text-white"
+               >
+                Register
+               </button>
+            </Link>
+
+
+          
         </div>
       </div>
     </div>

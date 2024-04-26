@@ -6,10 +6,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import Error from "../error/Error";
-// import Details from "../pages/detailsCard/Details";
-// import UserProfile from "../profile/UserProfile";
-// import UPdateProfile from "../profile/UPdateProfile";
-// import About from "../pages/about/About";
+
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import AllArt from "../components/AllArt";
 import AddCraft from "../components/AddCraft";

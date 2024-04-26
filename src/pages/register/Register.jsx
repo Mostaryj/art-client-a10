@@ -47,8 +47,8 @@ const Register = () => {
     //       .then(() => {
     //         console.log("Profile updated successfully");
     //         // toast.success("updated successfully");
-             setUser({
-               ...user,
+             user({
+              //  ...user,
                displayName: fullName,
     //           // email: email ,
     //           photoURL: photoURL,
