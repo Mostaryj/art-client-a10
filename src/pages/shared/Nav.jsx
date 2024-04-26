@@ -38,8 +38,8 @@ const Nav = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-base-100 border-b-2 ">
+    <div className="max-w-6xl mx-auto p-2">
+      <div className="navbar bg-base-200 border-b-2 ">
         <div className="navbar-start ">
           <div className="dropdown">
             <div
@@ -72,7 +72,7 @@ const Nav = () => {
           <a className="font-pop font-semibold lg:text-2xl  sm:flex items-center justify-center  bg-gradient-to-r from-cyan-400 to-violet-700  text-transparent bg-clip-text">
             <span>
               <img
-                src="/image/icon.png"
+                src="palette.png"
                 alt=""
                 className="w-10 h-10 hidden sm:block "
               />
