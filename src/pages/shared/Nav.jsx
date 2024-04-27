@@ -2,19 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
 import { renderToString } from "react-dom/server";
 
-
-
 const Nav = () => {
   const { logOut, user } = useAuth();
 
-  
   // console.log(user);
 
-  const tooltipContent = <>
-
-  {user?.displayName || "User name not found"}
-  
-  </>;
+  const tooltipContent = <>{user?.displayName || "User name not found"}</>;
   const tooltipString = renderToString(tooltipContent);
 
   const navLinks = (
@@ -34,9 +27,9 @@ const Nav = () => {
       {/* <li className="font-semibold">
         <NavLink to="/register">Register</NavLink>
       </li> */}
-     
     </>
   );
+
   return (
     <div className=" ">
       <div className="navbar bg-base-200 border-b-2 ">
@@ -77,13 +70,12 @@ const Nav = () => {
                 className="w-10 h-10 hidden sm:block "
               />
             </span>
-           Artz
+            Artz
           </a>
         </div>
         <div className="navbar-center  hidden sm:block md:flex lg:flex">
           <ul className="menu menu-horizontal   px-1 gap-4">{navLinks}</ul>
         </div>
-        
 
         {user && (
           <div className="navbar-end gap-4">
@@ -92,33 +84,28 @@ const Nav = () => {
                 tabIndex={0}
                 className="tooltip tooltip-bottom mr-4  btn btn-ghost  btn-circle avatar"
                 data-tip={tooltipString}
-              
               >
                 <div className="w-12 rounded-full ">
                   <img
                     src={
-                      user?.photoURL || 
-
-
-                       "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                      user?.photoURL ||
+                      "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                     }
-                    
                   />
-                      <button
+
+
+                  <button
                     className="btn text-white absolute mt-8 right-0  p-2 rounded-md shadow-md opacity-0 hover:opacity-100 transition-opacity hover:bg-blue-800 duration-300"
                     onClick={logOut}
                   >
                     LogOut
                   </button>
 
-{/* <div className="tooltip-content absolute bg-white p-2 rounded-md shadow-md hidden opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  {/* <div className="tooltip-content absolute bg-white p-2 rounded-md shadow-md hidden opacity-0 hover:opacity-100 transition-opacity duration-300">
                     {tooltipContent}
                   </div> */}
-                
                 </div>
-               
               </label>
-
             </div>
           </div>
         )}
@@ -126,41 +113,34 @@ const Nav = () => {
         <div className=" ">
           <Link to="/login">
             {/* {user ? ( */}
-              
-              {/* <button
+
+            {/* <button
                 onClick={logOut}
                 className="btn bg-cyan-500 text-white"
               >
                 LogOut
               </button> */}
 
-            
-             {/* ) 
+            {/* ) 
              : ( */}
 
-            
-            
-                <button
-                //  onClick={logOut}
-                 className="btn bg-blue-800 text-white"
-               >
-                 Login
-               </button>
-            
-
-             {/* )} */}
-          </Link>
-            <Link to="/register">
             <button
-                //  onClick={logOut}
-                 className="btn bg-blue-800 text-white"
-               >
-                Register
-               </button>
-            </Link>
+              //  onClick={logOut}
+              className="btn bg-blue-800 text-white"
+            >
+              Login
+            </button>
 
-
-          
+            {/* )} */}
+          </Link>
+          <Link to="/register">
+            <button
+              //  onClick={logOut}
+              className="btn bg-blue-800 text-white"
+            >
+              Register
+            </button>
+          </Link>
         </div>
       </div>
     </div>

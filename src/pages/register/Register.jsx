@@ -10,6 +10,7 @@ import { FaEye } from "react-icons/fa";
 import { useState } from "react";
 
 import { toast } from "react-toastify";
+import { updateProfile } from "firebase/auth";
 // import { updateProfile } from "firebase/auth";
 // import "react-toastify/dist/ReactToastify.css";
 
@@ -29,34 +30,32 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    //  const { email, password, fullName, photoURL } = data;
-    const { email, password, fullName } = data;
+      const { email, password, fullName, photoURL } = data;
 
-    createUser(email, password)
+    createUser(email, password, fullName, photoURL)
       .then((result) => {
         console.log(result);
-
         toast.success("Registration successfully");
+    
+        const profileUpdates = {
+          displayName: fullName,
+          photoURL: photoURL,
+        };
 
-        //  const profileUpdates = {
-        //    displayName: fullName,
-        //    photoURL: photoURL,
-        //  };
-
-    //     updateProfile(result.user, profileUpdates)
-    //       .then(() => {
-    //         console.log("Profile updated successfully");
-    //         // toast.success("updated successfully");
-             user({
-              //  ...user,
-               displayName: fullName,
-    //           // email: email ,
-    //           photoURL: photoURL,
+        updateProfile(result.user, profileUpdates)
+          .then(() => {
+           
+            setUser({
+              ...user,
+              displayName: fullName,
+              // email: email ,
+              photoURL: photoURL,
             });
-    //       })
-    //       .catch((error) => {
-    //         console.error("Error updating profile", error);
-    //       });
+          })
+          .catch((error) => {
+            console.error("Error updating profile", error);
+          });
+
 
         navigate(from);
        })
@@ -65,6 +64,11 @@ const Register = () => {
         console.error(error);
         toast.error("Registration failed. Please try again.");
       });
+
+
+
+
+
   };
 
   return (
