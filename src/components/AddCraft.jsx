@@ -1,7 +1,10 @@
 import Swal from "sweetalert2";
 import Nav from "../pages/shared/Nav";
+import useAuth from "../Hook/useAuth";
 
 const AddCraft = () => {
+  const { user } = useAuth() || {};
+
   const handleAddCraft = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -15,7 +18,7 @@ const AddCraft = () => {
     const time = form.time.value;
     const stock = form.stock.value;
     const name = form.name.value;
-    const email = form.email.value;
+    const email = user.email;
 
     const newArt = {
       photo,
@@ -229,6 +232,7 @@ const AddCraft = () => {
                   name="email"
                   placeholder="email"
                   className="input input-bordered w-full"
+                  readOnly
                 />
               </label>
             </div>

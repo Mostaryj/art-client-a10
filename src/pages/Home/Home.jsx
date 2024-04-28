@@ -3,6 +3,7 @@ import Cards from "../../components/Cards/Cards";
 import Banner from "../Banner/Banner";
 import Nav from "../shared/Nav";
 import About from "../../components/extra/About";
+import Question from "../../components/extra/Question";
 // import { Helmet } from "react-helmet-async";
 
 const Home = () => {
@@ -30,6 +31,7 @@ const Home = () => {
       card={card}></Cards>)
      }
       </div>
+      <Question></Question>
       <About></About>
     </div>
   );
