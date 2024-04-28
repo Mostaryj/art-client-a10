@@ -11,6 +11,7 @@ import PrivateRoute from "../privateRoute/PrivateRoute";
 import AllArt from "../components/AllArt";
 import AddCraft from "../components/AddCraft";
 import MyArt from "../components/MyArt";
+import Details from "../components/Details/Details";
 const routes = createBrowserRouter([
     {
       path: "/",
@@ -20,12 +21,14 @@ const routes = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
+            loader: () => fetch("http://localhost:5000/art")
         },
-        // {
-        // path: '/details/:id',      
-        // element: <PrivateRoute><Details></Details></PrivateRoute>,
-        //  loader: () => fetch("/fakeData/fakeData.json"),
-        // },
+        {
+           path: "/details/:id",
+           element: <Details></Details>,
+           loader: ({params}) => fetch(`http://localhost:5000/art/${params.id}`)
+        },
+       
         {
           path: "/login",
           element: <Login></Login>,

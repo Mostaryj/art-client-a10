@@ -1,59 +1,60 @@
 import Swal from "sweetalert2";
 import Nav from "../pages/shared/Nav";
 
-
-
-
-
-
 const AddCraft = () => {
+  const handleAddCraft = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const photo = form.photo.value;
+    const item = form.item.value;
+    const sub = form.sub.value;
+    const description = form.description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const time = form.time.value;
+    const stock = form.stock.value;
+    const name = form.name.value;
+    const email = form.email.value;
 
+    const newArt = {
+      photo,
+      item,
+      sub,
+      description,
+      price,
+      rating,
+      customization,
+      time,
+      stock,
+      name,
+      email,
+    };
 
-    const handleAddCraft = event =>{
-      event.preventDefault();
-     const form = event.target;
-     const photo = form.photo.value;
-     const item = form.item.value;
-     const sub = form.sub.value;
-     const description = form.description.value;
-     const price = form.price.value;
-     const rating = form.rating.value;
-     const customization  = form.customization.value;
-     const time = form.time.value;
-     const stock = form.stock.value;
-     const name = form.name.value;
-     const email = form.email.value;
+    console.log(newArt);
 
-
-     const newArt = {photo, item, sub, description, price, rating, customization, time, stock, name, email}
-
-     console.log(newArt);
-
-     //send data to server
-     fetch('http://localhost:5000/art',{
+    //send data to server
+    fetch("http://localhost:5000/art", {
       method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(newArt)
-     })
-     .then(res => res.json())
-     .then(data => {
-      console.log(data);
-      if (data.insertedId) {
-        Swal.fire({
-          title: "Success!",
-          text: "Art & Craft Added Successfully",
-          icon: "success",
-          confirmButtonText: "Cool",
-        });
-      }
-  
-     })
-    
+      body: JSON.stringify(newArt),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Art & Craft Added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
 
-    }
-    
   return (
     <div>
       <Nav></Nav>
@@ -84,14 +85,21 @@ const AddCraft = () => {
               <label className="label">
                 <span className="label-text">Item Name</span>
               </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="item"
-                  placeholder="Item Name"
-                  className="input input-bordered w-full"
-                />
-              </label>
+           
+               <select className="select text-gray-400">
+                <option disabled selected>
+                  Select Category
+                </option>
+
+                <option>Landscape Painting:</option>
+                <option>Portrait Drawing</option>
+                <option>Watercolour Painting</option>
+                <option>Oil Painting</option>
+                <option>Charcoal Sketching</option>
+                <option>Cartoon Drawing</option>
+
+
+              </select>
             </div>
             <div className="form-control md:w-1/2 ml-4">
               <label className="label">
@@ -152,20 +160,21 @@ const AddCraft = () => {
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">
+           
               <label className="label">
                 <span className="label-text">Customization</span>
               </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="customization"
-                  placeholder="customization"
-                  className="input input-bordered w-full"
-                />
-              </label>
+              <select className="select text-gray-400">
+                <option disabled selected>
+                  Select One
+                </option>
+
+                <option>Yes</option>
+                <option>No</option>
+              </select>
             </div>
           </div>
-          {/* form processing time and stock stactus */}
+          {/* form processing time and stock status */}
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
@@ -181,17 +190,18 @@ const AddCraft = () => {
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">
-              <label className="label">
+           
+                 <label className="label">
                 <span className="label-text">Stock Status</span>
               </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="stock"
-                  placeholder="stock"
-                  className="input input-bordered w-full"
-                />
-              </label>
+              <select className="select text-gray-400">
+                <option disabled selected>
+                  Select One
+                </option>
+
+                <option>Made-to-Order</option>
+                <option>In Stock</option>
+              </select>
             </div>
           </div>
           {/* form name, email */}

@@ -4,17 +4,18 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
-    <div>
+    <div className="">
       {/* <Helmet>
         <title>Luxury Retreats | error</title>
       </Helmet> */}
       
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col m-2 md:m-10 md:ml-20 md:mr-20 border-2 bg-slate-300 h-[300px] justify-center items-center">
         <h1 className="text-center font-bold lg:text-5xl mb-4">
+          404 <br />
           Page not found <br /> Enter the right path
         </h1>
         <Link to="/">
-          <button className="btn bg-blue-500 text-white">Go Back</button>
+          <button className="btn bg-blue-800 text-white">Go Back</button>
         </Link>
       </div>
      {/* <img src={error} alt="" 
