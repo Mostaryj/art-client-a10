@@ -65,7 +65,7 @@ const MyArt = () => {
                 <p>Stock Status: {craft.stock}</p>
               </div>
               <div>
-                <Link to='/update/:id'>
+                <Link to={`update/${craft._id}`}>
                 <button className="btn bg-green-600 text-white">Update</button>
                 </Link>
 

@@ -16,12 +16,16 @@ Welcome to Artz, your premier destination for exploring a world of artistry and 
 
 
 ## Categories
-- **Landscape Painting:**
-- **Portrait Drawing:**
-- **Watercolour Painting:**
-- **Oil Painting:**
-- **Charcoal Sketching:**
-- **Cartoon Drawing:**
+- **Landscape Painting**
+- **Portrait Drawing**
+- **Watercolour Painting**
+- **Oil Painting**
+- **Charcoal Sketching**
+- **Cartoon Drawing**
+
+## npm packages
+- **React-simple-typewriter**
+- **React Awesome reveal**
 
 
 Explore our collection and find the perfect artwork to adorn your space or inspire your creativity!

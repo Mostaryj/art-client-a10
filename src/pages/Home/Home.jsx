@@ -5,7 +5,10 @@ import Nav from "../shared/Nav";
 import About from "../../components/extra/About";
 import Question from "../../components/extra/Question";
 // import { Helmet } from "react-helmet-async";
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from 'react-simple-typewriter';
+
+import { Fade } from "react-awesome-reveal";
+
 
 
 const Home = () => {
@@ -25,7 +28,7 @@ const Home = () => {
 
       <h1 className="text-center font-semibold font-pop text-3xl mt-8">
      
-        <span style={{ color: 'red', fontWeight: 'bold' }}>
+        <span style={{ color: '', fontWeight: 'bold' }}>
           <Typewriter
             words={['Craft Item Section']}
             loop={1000000}
@@ -38,10 +41,12 @@ const Home = () => {
           />
         </span>
       </h1>
+      <Fade cascade damping={0.1}>
       <p className="text-center">
-        In these photos, you can choose your photos. Click view details to know
+        In these photos,. you can choose your photos. Click view details to know
         more about this place
       </p>
+      </Fade>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {
