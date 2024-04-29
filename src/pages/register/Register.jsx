@@ -58,7 +58,28 @@ const Register = () => {
 
 
         navigate(from);
-       })
+
+        // const createdAt = result.user?.metadata.creationTime;
+      //   const user = { email };
+      //   fetch(
+      //     "https://localhost:5000/user",
+      //     {
+      //       method: "POST",
+      //       headers: {
+      //         "content-type": "application/json",
+      //       },
+      //       body: JSON.stringify(user),
+      //     })
+      //     .then((res) => res.json())
+      //     .then((data) => {
+      //       // console.log(data);
+      //       if (data.insertedId) {
+      //         console.log("user added to database");
+      //       }
+      //     });
+        })
+
+      
 
       .catch((error) => {
         console.error(error);

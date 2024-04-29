@@ -8,7 +8,7 @@ const AddCraft = () => {
   const handleAddCraft = (event) => {
     event.preventDefault();
     const form = event.target;
-    const photo = form.photo.value;
+    const photo =  form.photo.value ;
     const item = form.item.value;
     const sub = form.sub.value;
     const description = form.description.value;
@@ -35,6 +35,7 @@ const AddCraft = () => {
     };
 
     console.log(newArt);
+    console.log(form);
 
     //send data to server
     fetch("http://localhost:5000/art", {
@@ -78,7 +79,9 @@ const AddCraft = () => {
                   name="photo"
                   placeholder="Photo URL"
                   className="input input-bordered w-full"
+                  required
                 />
+                 
               </label>
             </div>
           </div>
@@ -88,18 +91,15 @@ const AddCraft = () => {
               <label className="label">
                 <span className="label-text">Item Name</span>
               </label>
-           
-               <select className="select text-gray-400">
-                <option disabled selected>
-                  Select Category
-                </option>
+              <select name='item' className="select text-gray-400" >
+                <option disabled selected>Select Category</option>
 
-                <option>Landscape Painting:</option>
-                <option>Portrait Drawing</option>
-                <option>Watercolour Painting</option>
-                <option>Oil Painting</option>
+                <option >Landscape Painting</option>
+                <option >Portrait Drawing</option>
+                <option >Watercolour Painting</option>
+                <option >Oil Painting</option>
                 <option>Charcoal Sketching</option>
-                <option>Cartoon Drawing</option>
+                <option >Cartoon Drawing</option>
 
 
               </select>
@@ -114,7 +114,9 @@ const AddCraft = () => {
                   name="sub"
                   placeholder="Sub-Category"
                   className="input input-bordered w-full"
+                  required
                 />
+                 
               </label>
             </div>
           </div>
@@ -143,6 +145,7 @@ const AddCraft = () => {
                   name="price"
                   placeholder="price"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -159,6 +162,7 @@ const AddCraft = () => {
                   name="rating"
                   placeholder="rating"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -167,13 +171,13 @@ const AddCraft = () => {
               <label className="label">
                 <span className="label-text">Customization</span>
               </label>
-              <select className="select text-gray-400">
-                <option disabled selected>
+              <select name="customization" className="select text-gray-400">
+                <option  disabled selected>
                   Select One
                 </option>
 
                 <option>Yes</option>
-                <option>No</option>
+                <option >No</option>
               </select>
             </div>
           </div>
@@ -189,6 +193,7 @@ const AddCraft = () => {
                   name="time"
                   placeholder="time"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -197,8 +202,8 @@ const AddCraft = () => {
                  <label className="label">
                 <span className="label-text">Stock Status</span>
               </label>
-              <select className="select text-gray-400">
-                <option disabled selected>
+              <select name="stock" className="select text-gray-400">
+                <option  disabled selected>
                   Select One
                 </option>
 
@@ -219,6 +224,7 @@ const AddCraft = () => {
                   name="name"
                   placeholder="name"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>

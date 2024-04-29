@@ -5,9 +5,15 @@ import Nav from "../shared/Nav";
 import About from "../../components/extra/About";
 import Question from "../../components/extra/Question";
 // import { Helmet } from "react-helmet-async";
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Home = () => {
-  const cards = useLoaderData()
+  const cards = useLoaderData();
+
+  const handleDone = () => {
+    console.log(`Done after 5 loops!`)
+  }
   return (
     <div>
       {/* <Helmet>
@@ -18,7 +24,19 @@ const Home = () => {
       <Banner></Banner>
 
       <h1 className="text-center font-semibold font-pop text-3xl mt-8">
-        Craft Item Section
+     
+        <span style={{ color: 'red', fontWeight: 'bold' }}>
+          <Typewriter
+            words={['Craft Item Section']}
+            loop={1000000}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            onLoopDone={handleDone}
+          />
+        </span>
       </h1>
       <p className="text-center">
         In these photos, you can choose your photos. Click view details to know

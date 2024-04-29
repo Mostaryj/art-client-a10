@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className=" ">
+    <div className="border-2 mt-4 ">
       <h1 className="text-4xl  font-bold font-pop text-center mt-6">About Us</h1>
       <p className="text-center ">
         {" "}
@@ -11,7 +11,7 @@ const About = () => {
         here.
       </p>
 
-      <div className="dark:bg-gray-100 mt-4 dark:text-gray-800 lg:flex">
+      <div className="dark:bg-gray-100 border-t-2 mt-4 dark:text-gray-800 lg:flex">
         <div className="container flex flex-col-reverse mx-auto lg:flex-row">
           <div className="flex flex-col px-6 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 ">
             <div className="flex space-x-2 sm:space-x-4">
@@ -94,7 +94,7 @@ const About = () => {
           </div>
         </div>
         <div className="mt-2 ">
-          <img src="mark.jpg" alt="" className="" />
+          <img src="mark.jpg" alt="" className="sm:h-full" />
         </div>
       </div>
     </div>
