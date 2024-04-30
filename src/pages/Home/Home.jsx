@@ -15,7 +15,7 @@ const Home = () => {
   const cards = useLoaderData();
 
   const handleDone = () => {
-    console.log(`Done after 5 loops!`)
+    console.log(`Done after 100000 loops!`)
   }
   return (
     <div>

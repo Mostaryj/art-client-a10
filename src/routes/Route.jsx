@@ -24,7 +24,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
+        element: 
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ,
         loader: ({ params }) => fetch(`http://localhost:5000/art/${params.id}`),
       },
 
@@ -43,11 +47,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/addCraft",
-        element: <AddCraft></AddCraft>,
+        element: <PrivateRoute><AddCraft></AddCraft></PrivateRoute>,
       },
       {
         path: "/myArt",
-        element: <MyArt></MyArt>,
+        element: <PrivateRoute><MyArt></MyArt></PrivateRoute>,
         loader: () => fetch("http://localhost:5000/art"),
       },
       {

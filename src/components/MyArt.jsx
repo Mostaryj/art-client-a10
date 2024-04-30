@@ -9,6 +9,7 @@ const MyArt = () => {
   const [filteredCrafts, setFilteredCrafts] = useState([]);
   const { user } = useAuth() || {};
 
+
   
 
 
@@ -62,8 +63,13 @@ const MyArt = () => {
                 text: "Your Art has been deleted.",
                 icon: "success",
               });
+
+              const remaining = crafts.filter((craft) => craft._id !== _id);
+              setFilteredCrafts(remaining);
             }
           });
+
+        
       }
     });
   };

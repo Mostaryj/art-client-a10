@@ -5,10 +5,12 @@ import Nav from "../pages/shared/Nav";
 const Update = () => {
   const art = useLoaderData();
 
-  const { _id, item, sub, description, price, rating, customization, photo ,time, stock, name} =
+  const { _id, item, sub, description, price, rating, customization, photo ,time, stock} =
     art;
 
-  const handleUpdateArt = (event) => {
+   
+
+  const handleUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
     const photo =  form.photo.value ;
@@ -20,8 +22,6 @@ const Update = () => {
     const customization = form.customization.value;
     const time = form.time.value;
     const stock = form.stock.value;
-    const name = form.name.value;
-    // const email = user.email;
    
 
     const updatedArt = {
@@ -34,16 +34,15 @@ const Update = () => {
       customization,
       time,
       stock,
-      name,
-      // email,
+     
     };
 
     console.log(updatedArt);
 
     //send data to server
     fetch(
-      `http://localhost:5000/art/${_id}`,
-      {
+      `http://localhost:5000/art/${_id}`, {
+       
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -57,12 +56,12 @@ const Update = () => {
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
-            text: "Coffee Updated Successfully",
+            text: " Updated Successfully",
             icon: "success",
             confirmButtonText: "Cool",
-          });
+          })
         }
-      });
+      })
   };
 
   return (
@@ -72,7 +71,7 @@ const Update = () => {
         <h2 className="text-3xl font-pop text-center font-extrabold">
           Update Your Art & Craft
         </h2>
-        <form onSubmit={handleUpdateArt}>
+        <form onSubmit={handleUpdate}>
           {/* photo url */}
           <div className="mb-8">
             <div className="form-control w-full">
@@ -221,7 +220,7 @@ const Update = () => {
             </div>
           </div>
           {/* form name, email */}
-          <div className="md:flex mb-8">
+          {/* <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
                 <span className="label-text">User Name</span>
@@ -250,7 +249,7 @@ const Update = () => {
                 />
               </label>
             </div>
-          </div>
+          </div> */}
 
           <input
             type="submit"
