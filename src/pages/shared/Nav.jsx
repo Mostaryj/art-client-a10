@@ -82,19 +82,19 @@ const Nav = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="font-pop font-semibold lg:text-2xl  sm:flex items-center justify-center  bg-gradient-to-r from-cyan-400 to-violet-700  text-transparent bg-clip-text">
+          <a className="font-pop font-semibold lg:text-2xl  sm:flex items-center justify-center text-blue-800 bg-clip-text">
             <span>
               <img
                 src="palette.png"
                 alt=""
-                className="w-10 h-10 hidden sm:block "
+                className="w-10 h-10 hidden lg:block "
               />
             </span>
             Artz
           </a>
         </div>
         <div className="navbar-center  hidden sm:block md:flex lg:flex">
-          <ul className="menu menu-horizontal   px-1 gap-4">{navLinks}</ul>
+          <ul className="menu menu-horizontal   px-1 gap-2">{navLinks}</ul>
         </div>
 
         <div className="navbar-end">
@@ -130,7 +130,7 @@ const Nav = () => {
           </div>
         )}
       </div>
-      <label className="cursor-pointer grid place-items-center">
+      <label className="cursor-pointer grid place-items-center ">
         <input
           onChange={handleToggle}
           type="checkbox"

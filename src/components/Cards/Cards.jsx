@@ -12,7 +12,7 @@ const Cards = ({ card }) => {
         <figure>
           <img
             src={card.photo}
-            alt="Shoes"
+            alt=""
             className="h-[250px]"
           />
         </figure>

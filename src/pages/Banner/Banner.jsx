@@ -12,7 +12,7 @@ const Banner = () => {
               ❮
             </a>
 
-            <h1 className="relative lg:text-5xl text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
+            <h1 className="relative lg:text-4xl text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
               <Fade cascade damping={0.1}>
                 Welcome to Artz
               </Fade>
@@ -30,7 +30,7 @@ const Banner = () => {
               ❮
             </a>
 
-            <h1 className="relative lg:text-5xl text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
+            <h1 className="relative lg:text-4xl  text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
               <Fade cascade damping={0.1}>
                 Welcome to Artz
               </Fade>
@@ -46,7 +46,7 @@ const Banner = () => {
             <a href="#slide2" className="btn btn-circle">
               ❮
             </a>
-            <h1 className="relative lg:text-5xl text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
+            <h1 className="relative lg:text-4xl text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
               <Fade cascade damping={0.1}>
                 Welcome to Artz
               </Fade>
@@ -62,7 +62,7 @@ const Banner = () => {
             <a href="#slide3" className="btn btn-circle">
               ❮
             </a>
-            <h1 className="relative lg:text-5xl text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
+            <h1 className="relative lg:text-4xl text-xl text-center   font-pop top-1/2  font-bold text-blue-800 bg-white bg-opacity-50 w-[200px] md:w-[400px] lg:w[800px] md:h-20 lg:h-[150px]  rounded-xl p-2  lg:p-4">
               <Fade cascade damping={0.1}>
                 Welcome to Artz
               </Fade>
