@@ -62,7 +62,7 @@ const AddCraft = () => {
   return (
     <div>
       <Nav></Nav>
-      <div className="bg-slate-300 p-24">
+      <div className="bg-slate-300 p-4 md:p-24">
         <h2 className="text-3xl font-pop text-center font-extrabold">
           Add Craft Item
         </h2>
@@ -87,7 +87,7 @@ const AddCraft = () => {
           </div>
           {/* form item name and subcategory name */}
           <div className="md:flex mb-8">
-            <div className="form-control md:w-1/2">
+            <div className="form-control  md:w-1/2">
               <label className="label">
                 <span className="label-text">Item Name</span>
               </label>
@@ -104,7 +104,7 @@ const AddCraft = () => {
 
               </select>
             </div>
-            <div className="form-control md:w-1/2 ml-4">
+            <div className="form-control  md:w-1/2 ml-4">
               <label className="label">
                 <span className="label-text">Sub-Category</span>
               </label>

@@ -79,7 +79,8 @@ const MyArt = () => {
     <div>
       <Nav></Nav>
       <div className="card card-side bg-base-100 shadow-xl grid grid-cols-1 mt-16">
-        <div className="flex items-center justify-center gap-4 mb-6">
+        <h1 className="font-bold font-pop text-2xl text-center md:text-4xl">My Art & Craft List</h1>
+        <div className="flex items-center justify-center p-2 gap-4 mb-6">
           <span>Customization filter:</span>
           <select
             name="sort"
@@ -113,7 +114,7 @@ const MyArt = () => {
                 <p>Customization: {craft.customization}</p>
                 <p>Stock Status: {craft.stock}</p>
               </div>
-              <div>
+              <div className="p-4">
                 <Link to={`/update/${craft._id}`}>
                   <button className="btn bg-green-600 text-white">
                     Update

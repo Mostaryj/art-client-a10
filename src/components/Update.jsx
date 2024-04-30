@@ -67,8 +67,8 @@ const Update = () => {
   return (
     <div>
       <Nav></Nav>
-      <div className="bg-slate-300 p-24">
-        <h2 className="text-3xl font-pop text-center font-extrabold">
+      <div className="bg-slate-300 md:p-24 p-2">
+        <h2 className="md:text-3xl font-pop text-center font-extrabold">
           Update Your Art & Craft
         </h2>
         <form onSubmit={handleUpdate}>

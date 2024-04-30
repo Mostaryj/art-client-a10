@@ -26,7 +26,7 @@ const Home = () => {
 
       <Banner></Banner>
 
-      <h1 className="text-center font-semibold font-pop text-3xl mt-8">
+      <h1 className="text-center font-semibold font-pop md:text-3xl mt-8">
      
         <span style={{ color: '', fontWeight: 'bold' }}>
           <Typewriter

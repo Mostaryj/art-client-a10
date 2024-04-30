@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className="border-2 mt-4 ">
-      <h1 className="text-4xl  font-bold font-pop text-center mt-6">About Us</h1>
+      <h1 className="md:text-4xl text-2xl font-bold font-pop text-center mt-6">About Us</h1>
       <p className="text-center ">
         {" "}
         Our page features a diverse range of artworks, including landscapes,
