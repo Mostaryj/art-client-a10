@@ -10,10 +10,6 @@ const MyArt = () => {
   const { user } = useAuth() || {};
 
   
-  // const navigate = useNavigate();
-  // const location = useLocation();
-
-  // const from = location?.state || "/";
 
 
   const handleFilter = (e) => {
@@ -41,7 +37,7 @@ const MyArt = () => {
  
   //delete
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -54,7 +50,7 @@ const MyArt = () => {
       if (result.isConfirmed) {
         console.log("delete confirm");
 
-        fetch(`http://localhost:5000/art/${_id}`, {
+        fetch(`http://localhost:5000/art-craft/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -112,7 +108,7 @@ const MyArt = () => {
                 <p>Stock Status: {craft.stock}</p>
               </div>
               <div>
-                <Link to={`update/${craft._id}`}>
+                <Link to={`/update/${craft._id}`}>
                   <button className="btn bg-green-600 text-white">
                     Update
                   </button>

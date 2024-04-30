@@ -1,36 +1,48 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Nav from "../pages/shared/Nav";
 
 const Update = () => {
-  const loadedArt = useLoaderData();
+  const art = useLoaderData();
 
-  const { _id, item, price, rating, customization, photo } =
-    loadedArt;
+  const { _id, item, sub, description, price, rating, customization, photo ,time, stock, name} =
+    art;
 
   const handleUpdateArt = (event) => {
     event.preventDefault();
     const form = event.target;
+    const photo =  form.photo.value ;
     const item = form.item.value;
+    const sub = form.sub.value;
+    const description = form.description.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const customization = form.customization.value;
-    const photo = form.photo.value
+    const time = form.time.value;
+    const stock = form.stock.value;
+    const name = form.name.value;
+    // const email = user.email;
    
 
     const updatedArt = {
+      photo,
       item,
+      sub,
+      description,
       price,
       rating,
       customization,
-   
-      photo,
+      time,
+      stock,
+      name,
+      // email,
     };
 
     console.log(updatedArt);
 
     //send data to server
     fetch(
-      `http://localhost:5000/art${_id}`,
+      `http://localhost:5000/art/${_id}`,
       {
         method: "PUT",
         headers: {
@@ -55,22 +67,78 @@ const Update = () => {
 
   return (
     <div>
-      <div className="bg-[#F4F3F0] p-24">
-        <h2 className="text-3xl font-extrabold">Update Name : </h2>
+      <Nav></Nav>
+      <div className="bg-slate-300 p-24">
+        <h2 className="text-3xl font-pop text-center font-extrabold">
+          Update Your Art & Craft
+        </h2>
         <form onSubmit={handleUpdateArt}>
-          {/* form name and quantity row */}
+          {/* photo url */}
+          <div className="mb-8">
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Photo URL"
+                  className="input input-bordered w-full"
+                  defaultValue={photo}
+                />
+                 
+              </label>
+            </div>
+          </div>
+          {/* form item name and subcategory name */}
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
                 <span className="label-text">Item Name</span>
               </label>
+              <select name='item' defaultValue={item} className="select text-gray-400" >
+                <option disabled selected>Select Category</option>
+
+                <option >Landscape Painting</option>
+                <option >Portrait Drawing</option>
+                <option >Watercolour Painting</option>
+                <option >Oil Painting</option>
+                <option>Charcoal Sketching</option>
+                <option >Cartoon Drawing</option>
+
+
+              </select>
+            </div>
+            <div className="form-control md:w-1/2 ml-4">
+              <label className="label">
+                <span className="label-text">Sub-Category</span>
+              </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="item"
-                  defaultValue={item}
-                  placeholder="Item Name"
+                  name="sub"
+                  placeholder="Sub-Category"
                   className="input input-bordered w-full"
+                  defaultValue={sub}
+                />
+                 
+              </label>
+            </div>
+          </div>
+          {/* form description and price row */}
+          <div className="md:flex mb-8">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Short Description</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="description"
+                  placeholder="description"
+                  className="input input-bordered w-full"
+                  defaultValue={description}
                 />
               </label>
             </div>
@@ -82,14 +150,14 @@ const Update = () => {
                 <input
                   type="text"
                   name="price"
-                  defaultValue={price}
-                  placeholder="Price"
+                  placeholder="price"
                   className="input input-bordered w-full"
+                  defaultValue={price}
                 />
               </label>
             </div>
           </div>
-          {/* form supplier row */}
+          {/* form rating and customization row */}
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
@@ -99,79 +167,95 @@ const Update = () => {
                 <input
                   type="text"
                   name="rating"
-                  placeholder="Rating"
-                  defaultValue={rating}
+                  placeholder="rating"
                   className="input input-bordered w-full"
+                 defaultValue={rating}
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">
+           
               <label className="label">
                 <span className="label-text">Customization</span>
               </label>
+              <select name="customization" 
+              defaultValue={customization} className="select text-gray-400">
+                <option  disabled selected>
+                  Select One
+                </option>
+
+                <option>Yes</option>
+                <option >No</option>
+              </select>
+            </div>
+          </div>
+          {/* form processing time and stock status */}
+          <div className="md:flex mb-8">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Processing Time</span>
+              </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="customization"
-                  defaultValue={customization}
-                  placeholder="customization"
+                  name="time"
+                  placeholder="time"
                   className="input input-bordered w-full"
+                  defaultValue={time}
                 />
               </label>
             </div>
+            <div className="form-control md:w-1/2 ml-4">
+           
+                 <label className="label">
+                <span className="label-text">Stock Status</span>
+              </label>
+              <select name="stock" defaultValue={stock} className="select text-gray-400">
+                <option  disabled selected>
+                  Select One
+                </option>
+
+                <option>Made-to-Order</option>
+                <option>In Stock</option>
+              </select>
+            </div>
           </div>
-          {/* form category and details row */}
-          {/* <div className="md:flex mb-8">
+          {/* form name, email */}
+          <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Category</span>
+                <span className="label-text">User Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="category"
-                  defaultValue={category}
-                  placeholder="Category"
+                  name="name"
+                  placeholder="name"
                   className="input input-bordered w-full"
+                  defaultValue={name}
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">
               <label className="label">
-                <span className="label-text">Details</span>
+                <span className="label-text">User Email</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="details"
-                  defaultValue={details}
-                  placeholder="Details"
+                  name="email"
+                  placeholder="email"
                   className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-          </div> */}
-          {/* form Photo url row */}
-          <div className="mb-8">
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text">Photo URL</span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="photo"
-                  defaultValue={photo}
-                  placeholder="Photo URL"
-                  className="input input-bordered w-full"
+                  readOnly
                 />
               </label>
             </div>
           </div>
+
           <input
             type="submit"
-            value="Update Coffee"
-            className="btn btn-block"
+            value="Update"
+            className="btn btn-block bg-blue-800 text-white"
           />
         </form>
       </div>

@@ -132,6 +132,7 @@ const AddCraft = () => {
                   name="description"
                   placeholder="description"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
