@@ -19,9 +19,7 @@ const Home = () => {
   }
   return (
     <div>
-      {/* <Helmet>
-        <title>Artz | Home</title>
-      </Helmet> */}
+      
       <Nav></Nav>
 
       <Banner></Banner>
