@@ -2,33 +2,31 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Update = () => {
-  const coffee = useLoaderData();
+  const loadedArt = useLoaderData();
 
-  const { _id, name, quantity, supplier, taste, category, details, photo } =
-    coffee;
+  const { _id, item, price, rating, customization, photo } =
+    loadedArt;
 
-  const handleUpdateCoffee = (event) => {
+  const handleUpdateArt = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
-    const quantity = form.quantity.value;
-    const supplier = form.supplier.value;
-    const taste = form.taste.value;
-    const category = form.category.value;
-    const details = form.details.value;
-    const photo = form.photo.value;
+    const item = form.item.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const photo = form.photo.value
+   
 
-    const updatedCoffee = {
-      name,
-      quantity,
-      supplier,
-      taste,
-      category,
-      details,
+    const updatedArt = {
+      item,
+      price,
+      rating,
+      customization,
+   
       photo,
     };
 
-    console.log(updatedCoffee);
+    console.log(updatedArt);
 
     //send data to server
     fetch(
@@ -38,7 +36,7 @@ const Update = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(updatedCoffee),
+        body: JSON.stringify(updatedArt),
       }
     )
       .then((res) => res.json())
@@ -58,34 +56,34 @@ const Update = () => {
   return (
     <div>
       <div className="bg-[#F4F3F0] p-24">
-        <h2 className="text-3xl font-extrabold">Update Coffee : {name}</h2>
-        <form onSubmit={handleUpdateCoffee}>
+        <h2 className="text-3xl font-extrabold">Update Name : </h2>
+        <form onSubmit={handleUpdateArt}>
           {/* form name and quantity row */}
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Coffee Name</span>
+                <span className="label-text">Item Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="name"
-                  defaultValue={name}
-                  placeholder="Coffee Name"
+                  name="item"
+                  defaultValue={item}
+                  placeholder="Item Name"
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">
               <label className="label">
-                <span className="label-text">Available Quantity</span>
+                <span className="label-text">Price</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="quantity"
-                  defaultValue={quantity}
-                  placeholder="Available Quantity"
+                  name="price"
+                  defaultValue={price}
+                  placeholder="Price"
                   className="input input-bordered w-full"
                 />
               </label>
@@ -95,35 +93,35 @@ const Update = () => {
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Supplier Name</span>
+                <span className="label-text">Rating</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="supplier"
-                  placeholder="Supplier Name"
-                  defaultValue={supplier}
+                  name="rating"
+                  placeholder="Rating"
+                  defaultValue={rating}
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">
               <label className="label">
-                <span className="label-text">Taste</span>
+                <span className="label-text">Customization</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="taste"
-                  defaultValue={taste}
-                  placeholder="Taste"
+                  name="customization"
+                  defaultValue={customization}
+                  placeholder="customization"
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
           </div>
           {/* form category and details row */}
-          <div className="md:flex mb-8">
+          {/* <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
                 <span className="label-text">Category</span>
@@ -152,7 +150,7 @@ const Update = () => {
                 />
               </label>
             </div>
-          </div>
+          </div> */}
           {/* form Photo url row */}
           <div className="mb-8">
             <div className="form-control w-full">

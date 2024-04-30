@@ -48,9 +48,7 @@ const routes = createBrowserRouter([
       {
         path: "/myArt",
         element: <MyArt></MyArt>,
-       
-       
-
+        loader: () => fetch("http://localhost:5000/art"),
       },
       {
         path: "/update/:id",

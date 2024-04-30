@@ -97,14 +97,14 @@ const AuthProvider = ({ children }) => {
 
 
   const allValue = {
-    createUser,
+    createUser,    
     signInUser,
     googleLogin,
     githubLogin,
     logOut,
     user,
-     setUser,
-        loading
+    setUser,
+    loading
 
   };
   return (
