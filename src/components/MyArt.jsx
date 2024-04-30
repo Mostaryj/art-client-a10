@@ -23,7 +23,7 @@ const MyArt = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/art-email/${user.email}`)
+    fetch(`https://art-server-delta.vercel.app/art-email/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -51,7 +51,7 @@ const MyArt = () => {
       if (result.isConfirmed) {
         console.log("delete confirm");
 
-        fetch(`http://localhost:5000/art-craft/${_id}`, {
+        fetch(`https://art-server-delta.vercel.app/art-craft/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

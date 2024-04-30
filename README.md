@@ -1,6 +1,6 @@
 # Artz
 
-[Live Site URL](https://www.example.com)
+Live link: https://art-store-64ab6.web.app
 
 ## Description
 

@@ -20,7 +20,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/art"),
+        loader: () => fetch("https://art-server-delta.vercel.app/art"),
       },
       {
         path: "/details/:id",
@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
             <Details></Details>
           </PrivateRoute>
         ,
-        loader: ({ params }) => fetch(`http://localhost:5000/art/${params.id}`),
+        loader: ({ params }) => fetch(`https://art-server-delta.vercel.app/art/${params.id}`),
       },
 
       {
@@ -43,7 +43,7 @@ const routes = createBrowserRouter([
       {
         path: "/allArt",
         element: <AllArt></AllArt>,
-        loader: () => fetch("http://localhost:5000/art"),
+        loader: () => fetch("https://art-server-delta.vercel.app/art"),
       },
       {
         path: "/addCraft",
@@ -52,12 +52,12 @@ const routes = createBrowserRouter([
       {
         path: "/myArt",
         element: <PrivateRoute><MyArt></MyArt></PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/art"),
+        loader: () => fetch("https://art-server-delta.vercel.app/art"),
       },
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5000/art/${params.id}`),
+        loader: ({ params }) => fetch(`https://art-server-delta.vercel.app/art/${params.id}`),
       },
     ],
   },

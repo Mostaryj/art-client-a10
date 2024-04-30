@@ -41,7 +41,7 @@ const Update = () => {
 
     //send data to server
     fetch(
-      `http://localhost:5000/art/${_id}`, {
+      `https://art-server-delta.vercel.app/art/${_id}`, {
        
         method: "PUT",
         headers: {

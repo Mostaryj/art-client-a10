@@ -38,7 +38,7 @@ const AddCraft = () => {
     console.log(form);
 
     //send data to server
-    fetch("http://localhost:5000/art", {
+    fetch("https://art-server-delta.vercel.app/art", {
       method: "POST",
       headers: {
         "content-type": "application/json",
