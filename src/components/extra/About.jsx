@@ -6,9 +6,7 @@ const About = () => {
         {" "}
         Our page features a diverse range of artworks, including landscapes,
         portraits, still life, abstracts, cartoons, illustrations, and more.
-        Whether you are drawn to realism, impressionism, surrealism, or
-        contemporary art, you wll find something to inspire and delight you
-        here.
+      
       </p>
 
       <div className="dark:bg-gray-100 border-t-2 mt-4 dark:text-gray-800 lg:flex">
