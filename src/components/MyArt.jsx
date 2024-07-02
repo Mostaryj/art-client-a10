@@ -80,6 +80,7 @@ const MyArt = () => {
       <Nav></Nav>
       <div className="card card-side bg-base-100 shadow-xl grid grid-cols-1 mt-16">
         <h1 className="font-bold font-pop text-2xl text-center md:text-4xl">My Art & Craft List</h1>
+        {/* filter */}
         <div className="flex items-center justify-center p-2 gap-4 mb-6">
           <span>Customization filter:</span>
           <select
@@ -95,6 +96,7 @@ const MyArt = () => {
             <option value="No">No</option>
           </select>
         </div>
+        {/*  */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredCrafts.map((craft) => (

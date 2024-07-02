@@ -1,31 +1,36 @@
-# Artz
+## Art & Craft Store - Painting and Drawing
+
+## Website: Artz
 
 Live link: https://art-store-64ab6.web.app
 
-## Description
+## Project Overview
+This project is an e-commerce web application focusing on the Painting and Drawing. The platform allows users to browse and purchase various painting and drawing items, as well as manage their own art and craft listings.
 
-Welcome to Artz, your premier destination for exploring a world of artistry and creativity. Dive into our curated collection of artworks, ranging from breathtaking landscapes to captivating portraits, designed to inspire and enrich your artistic journey.
 
 ## Features
 
-- Discover a diverse array of artwork styles, from classic landscapes to vibrant portraits, all curated to inspire and enrich your artistic journey.
-- Engage with a vibrant community of artists and art enthusiasts, sharing insights, techniques, and appreciation for the beauty of visual expression.
-- Immerse yourself in the world of art with our wide selection of mediums, including oil, watercolor, charcoal, and more, offering endless possibilities for creative exploration.
-- Whether you're a seasoned artist seeking inspiration or a beginner looking to discover your artistic voice, Artz provides a welcoming platform to nurture your passion for art.
-- Elevate your space with stunning pieces from our collection, each meticulously crafted to evoke emotion, spark conversation, and bring joy to any environment.
+- **User Authentication**: Secure registration and login functionality with JWT token-based authentication. Social login with Google or GitHub.
+- **Category Browsing**: Users can browse art and craft items by subcategories within the Painting and Drawing category.
+- **Responsive Design**: The application is fully responsive, ensuring a seamless experience across mobile, tablet, and desktop devices.
 
 
-## Categories
-- **Landscape Painting**
-- **Portrait Drawing**
-- **Watercolour Painting**
-- **Oil Painting**
-- **Charcoal Sketching**
-- **Cartoon Drawing**
+## Technologies Used
 
-## npm packages
-- **React-simple-typewriter**
-- **React Awesome reveal**
+- **Frontend**: React, react-router-dom, axios, JWT for authentication, React-simple-typewriter, React Awesome reveal.
+- **Backend**: Node.js, Express.js, MongoDB for database management.
+- **Additional Tools**: Firebase for environment variables, Vercel for deployment.
+
+## Cloning and Local Setup
+
+To run this project locally, follow these steps:
+1. Clone this repository.
+2. Install dependencies.(npm install)
+3. Set up MongoDB and Firebase credentials in environment variables.
+4. Clone the server repository(https://github.com/mostaryjahan/art-server-a10)
+5. Install server dependencies and start the server.
 
 
-Explore our collection and find the perfect artwork to adorn your space or inspire your creativity!
+
+
+
