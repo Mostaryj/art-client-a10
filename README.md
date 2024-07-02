@@ -27,7 +27,7 @@ To run this project locally, follow these steps:
 1. Clone this repository.
 2. Install dependencies.(npm install)
 3. Set up MongoDB and Firebase credentials in environment variables.
-4. Clone the server repository(https://github.com/mostaryjahan/art-server-a10)
+4. Clone the server repository(https://github.com/mostaryjahan/art-server-a10.git)
 5. Install server dependencies and start the server.
 
 
